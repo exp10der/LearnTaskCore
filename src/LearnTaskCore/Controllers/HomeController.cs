@@ -14,11 +14,11 @@
             _context = context;
         }
 
-        public IActionResult Index() => Content($"Hello MVC!{Environment.NewLine}{_context.Items.Count()}");
+        public IActionResult Index() => View();
 
-        public IActionResult SimpleView()
+        public IActionResult StringResult()
         {
-            return View();
+            return Content($"Hello MVC!{Environment.NewLine}{_context.Items.Count()}");
         }
     }
 }
