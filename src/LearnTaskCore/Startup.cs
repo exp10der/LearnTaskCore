@@ -24,6 +24,8 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             services.AddScoped(_ => new ApplicationDbContext(Configuration["Data:DefaultConnection:ConnectionString"]));
         }
 
@@ -36,6 +38,13 @@
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.Run(async context =>
             {
