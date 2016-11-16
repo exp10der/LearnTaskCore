@@ -1,5 +1,6 @@
 ﻿namespace LearnTaskCore
 {
+    using Infrastructure;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -23,6 +24,7 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(_ => new ApplicationDbContext(Configuration["Data:DefaultConnection:ConnectionString"]));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -37,6 +39,8 @@
 
             app.Run(async context =>
             {
+                var dbTestScopeDI = context.RequestServices.GetService<ApplicationDbContext>();
+
                 var logger = loggerFactory.CreateLogger("TestInfoLogger");
 
                 logger.LogInformation("Processing request {0}", context.Request.Path);
