@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{818960E7-AFF5-4200-ADF1-8AED2688BC03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E52792D2-5F71-4ECA-9E33-8296BF961ADD}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LearnTaskCore", "src\LearnTaskCore\LearnTaskCore.xproj", "{71F49C47-9F04-44EE-A2D1-F99126F4C706}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71F49C47-9F04-44EE-A2D1-F99126F4C706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F49C47-9F04-44EE-A2D1-F99126F4C706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F49C47-9F04-44EE-A2D1-F99126F4C706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F49C47-9F04-44EE-A2D1-F99126F4C706}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71F49C47-9F04-44EE-A2D1-F99126F4C706} = {818960E7-AFF5-4200-ADF1-8AED2688BC03}
+	EndGlobalSection
+EndGlobal
