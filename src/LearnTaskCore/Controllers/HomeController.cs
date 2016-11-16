@@ -14,9 +14,16 @@
             _mediator = mediator;
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             var model = await _mediator.SendAsync(new Index.Query());
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> Details(Details.Query query)
+        {
+            var model = await _mediator.SendAsync(query);
 
             return View(model);
         }

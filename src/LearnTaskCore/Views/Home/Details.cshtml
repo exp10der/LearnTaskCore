@@ -1,0 +1,29 @@
+﻿@using LearnTaskCore.Features;
+@using LearnTaskCore.Features.Home;
+
+@model Details.Model
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@nameof(Model.Name)</th>
+            <th>@nameof(Model.Description)</th>
+            <th>Image</th>
+            <th>Related links</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th>@Model.Name</th>
+            <th>@Model.Description</th>
+            <th>@Model.ImagePath</th>
+            <th>@Model.HasRelatedLinks</th>
+        </tr>
+    </tbody>
+</table>

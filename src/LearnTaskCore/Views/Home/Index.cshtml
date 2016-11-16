@@ -21,7 +21,7 @@
     {
         <tr>
             <th>@item.Id</th>
-            <th>@item.Name</th>
+            <th>@Html.ActionLink(item.Name, "Details", new { id = item.Id })</th>
         </tr>
     }
     </tbody>
