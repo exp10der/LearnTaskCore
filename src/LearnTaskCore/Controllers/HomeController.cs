@@ -15,5 +15,10 @@
         }
 
         public IActionResult Index() => Content($"Hello MVC!{Environment.NewLine}{_context.Items.Count()}");
+
+        public IActionResult SimpleView()
+        {
+            return View();
+        }
     }
 }
