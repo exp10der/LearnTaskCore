@@ -12,7 +12,11 @@
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "1.1.0-preview4-final",
-    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": "1.1.0-preview4-final"
+    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": "1.1.0-preview4-final",
+    "MediatR": "2.1.0",
+    "AutoMapper.EF6": "0.5.0",
+    "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.1.2",
+    "MediatR.Extensions.Microsoft.DependencyInjection": "1.0.1"
   },
 
   "tools": {

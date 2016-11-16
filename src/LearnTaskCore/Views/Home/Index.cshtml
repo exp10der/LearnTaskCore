@@ -1,5 +1,28 @@
-﻿@{
+﻿@using LearnTaskCore.Features;
+@using LearnTaskCore.Features.Home;
+
+@model IList<Index.Model>
+
+@{
     ViewBag.Title = "Simple View";
 }
 
-<h2>Simple View!</h2>
+<h2>Objects</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Name</th>
+        </tr>
+    }
+    </tbody>
+</table>

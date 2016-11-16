@@ -1,6 +1,8 @@
 ﻿namespace LearnTaskCore
 {
+    using AutoMapper;
     using Infrastructure;
+    using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -26,6 +28,11 @@
         {
             services.AddMvc();
 
+            services.AddAutoMapper(typeof(Startup));
+
+            Mapper.AssertConfigurationIsValid();
+
+            services.AddMediatR(typeof(Startup));
             services.AddScoped(_ => new ApplicationDbContext(Configuration["Data:DefaultConnection:ConnectionString"]));
         }
 

@@ -1,24 +1,24 @@
 ﻿namespace LearnTaskCore.Controllers
 {
-    using System;
-    using System.Linq;
-    using Infrastructure;
+    using System.Threading.Tasks;
+    using Features.Home;
+    using MediatR;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IMediator _mediator;
 
-        public HomeController(ApplicationDbContext context)
+        public HomeController(IMediator mediator)
         {
-            _context = context;
+            _mediator = mediator;
         }
 
-        public IActionResult Index() => View();
-
-        public IActionResult StringResult()
+        public async Task<ActionResult> Index()
         {
-            return Content($"Hello MVC!{Environment.NewLine}{_context.Items.Count()}");
+            var model = await _mediator.SendAsync(new Index.Query());
+
+            return View(model);
         }
     }
 }
