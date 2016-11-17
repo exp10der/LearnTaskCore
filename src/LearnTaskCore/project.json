@@ -16,7 +16,8 @@
     "MediatR": "2.1.0",
     "AutoMapper.EF6": "0.5.0",
     "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.1.2",
-    "MediatR.Extensions.Microsoft.DependencyInjection": "1.0.1"
+    "MediatR.Extensions.Microsoft.DependencyInjection": "1.0.1",
+    "DotNetZip": "1.10.1"
   },
 
   "tools": {

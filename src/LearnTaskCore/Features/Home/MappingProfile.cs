@@ -8,6 +8,7 @@
         public MappingProfile()
         {
             CreateMap<Item, Index.Model>();
+            CreateMap<ItemDocument, Download.Model.ItemDocument>();
         }
     }
 }

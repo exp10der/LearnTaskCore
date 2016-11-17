@@ -1,6 +1,5 @@
 ﻿namespace LearnTaskCore.Controllers
 {
-    using System;
     using System.Threading.Tasks;
     using Features.Home;
     using MediatR;
@@ -33,7 +32,7 @@
         {
             var model = await _mediator.SendAsync(query);
 
-            throw new NotImplementedException();
+            return File(model.FileContents, "application/zip", "Documents.zip");
         }
     }
 }
