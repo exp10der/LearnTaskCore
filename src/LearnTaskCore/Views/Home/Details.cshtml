@@ -23,7 +23,7 @@
             <th>@Model.Name</th>
             <th>@Model.Description</th>
             <th>@Model.ImagePath</th>
-            <th>@Model.HasRelatedLinks</th>
+            <th>@(Model.HasRelatedLinks ? Html.ActionLink("Download related links", "Download", new { id = Model.Id }) : Html.Raw("Related documents are missing"))</th>
         </tr>
     </tbody>
 </table>

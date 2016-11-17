@@ -1,5 +1,6 @@
 ﻿namespace LearnTaskCore.Controllers
 {
+    using System;
     using System.Threading.Tasks;
     using Features.Home;
     using MediatR;
@@ -26,6 +27,13 @@
             var model = await _mediator.SendAsync(query);
 
             return View(model);
+        }
+
+        public async Task<IActionResult> Download(Download.Query query)
+        {
+            var model = await _mediator.SendAsync(query);
+
+            throw new NotImplementedException();
         }
     }
 }
