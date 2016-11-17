@@ -1,6 +1,5 @@
 ﻿namespace LearnTaskCore.Features.Home
 {
-    using System;
     using System.Threading.Tasks;
     using Infrastructure;
     using MediatR;
@@ -32,7 +31,20 @@
 
             public async Task<Model> Handle(Query message)
             {
-                throw new NotImplementedException();
+                var query = @"
+SELECT  I.* ,
+        CASE WHEN EXISTS ( SELECT   1
+                           FROM     dbo.ItemDocuments AS ID
+                           WHERE    ID.ItemId = I.Id ) THEN CAST(1 AS BIT)
+             ELSE CAST(0 AS BIT)
+        END AS HasRelatedLinks
+FROM    dbo.Items AS I
+WHERE   Id = @p0;
+";
+
+                var model = await _context.Database.SqlQuery<Model>(query, message.Id).SingleOrDefaultAsync();
+
+                return model;
             }
         }
     }
