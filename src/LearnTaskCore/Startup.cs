@@ -5,7 +5,6 @@
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
@@ -42,9 +41,7 @@
             loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseStaticFiles();
 
@@ -53,17 +50,6 @@
                 routes.MapRoute(
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            app.Run(async context =>
-            {
-                var dbTestScopeDI = context.RequestServices.GetService<ApplicationDbContext>();
-
-                var logger = loggerFactory.CreateLogger("TestInfoLogger");
-
-                logger.LogInformation("Processing request {0}", context.Request.Path);
-
-                await context.Response.WriteAsync("Hello World!");
             });
         }
     }
